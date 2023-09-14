@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Turn the object into JSON and back Turn the user into JSON and then read it back
+        into another variable.</h2> <br>
+        <h3>user = { name: "John Smith", age: 35};</h3><br>
+            let user = {<br>
+                name: "John Smith",<br>
+                age: 35 <br>
+            }; <br>
+            
+            let user2 = JSON.parse(JSON.stringify(user));
+            <script>
+                let user = {
+                name: "John Smith",
+                age: 35
+                };
+
+                let user2 = JSON.parse(JSON.stringify(user));
+            </script>
+</body>
+</html>

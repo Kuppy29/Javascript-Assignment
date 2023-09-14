@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Map to objects</h2>
+    <h3>let john = { name: "John", surname: "Smith", id: 1 }; let pete = { name: "Pete",
+        surname: "Hunt", id: 2 }; let mary = { name: "Mary", surname: "Key", id: 3 }; let
+        users = [ john, pete, mary ]; let usersMapped = /* ... your code ... */</h3><br><br>
+
+        let john = { name: "John", surname: "Smith", id: 1 };<br>
+        let pete = { name: "Pete", surname: "Hunt", id: 2 };<br>
+        let mary = { name: "Mary", surname: "Key", id: 3 };<br>
+
+        let users = [ john, pete, mary ];<br><br>
+
+        let usersMapped = /* ... your code ... */<br>
+        <h3>let usersMapped = users.map(user => ({ <br>
+            fullName: `${user.name} ${user.surname}`,<br>
+            id: <user class="idbr"></user>
+            }));</h3><br>
+
+        /* usersMapped = [<br>
+        { fullName: "John Smith", id: 1 },<br>
+        { fullName: "Pete Hunt", id: 2 },<br>
+        { fullName: "Mary Key", id: 3 }<br>
+        ]*/ <br>
+
+        alert( usersMapped[0].id ) // 1<br>
+        alert( usersMapped[0].fullName ) // John Smith<br><br>
+        <script>
+            let john = { name: "John", surname: "Smith", id: 1 };
+            let pete = { name: "Pete", surname: "Hunt", id: 2 };
+            let mary = { name: "Mary", surname: "Key", id: 3 };
+
+            let users = [ john, pete, mary ];
+
+            let usersMapped = users.map(user => ({
+            fullName: `${user.name} ${user.surname}`,
+            id: user.id
+            }));
+
+            /*
+            usersMapped = [
+            { fullName: "John Smith", id: 1 },
+            { fullName: "Pete Hunt", id: 2 },
+            { fullName: "Mary Key", id: 3 }
+            ]
+            */
+
+            alert( usersMapped[0].id ); // 1
+            alert( usersMapped[0].fullName ); // John Smith
+        </script>
+</body>
+</html>
