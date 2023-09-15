@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Essentials | Assignment</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>2. What is JavaScript Output method?</h2><br>
+    <p>--&gt; We can get JavaScript Output in 4 simple and different ways on a webpage and these are given below. We can use them according to the application requirement. In this tutorial, we will be learning the following four different ways of getting output from JavaScript code, just like we use printf() in C language, cout in C++, etc.</p>
+    <p>1. Using innerHTML property</p>
+    <p>2. Using document.write() method</p>
+    <p>3. Using Alert Box</p>
+    <p>4. By logging on the Console</p>
+    <br><br>
+
+
+    <h2>3. How to used JavaScript Output method?</h2><br>
+    <p>--&gt; A New Console Output Line Will Be Added <br>
+
+        - If you wish to add a new line to the JavaScript new line console while printing a few words, the \n sign for the new line can be used.</p><br>
+        <h4>JavaScript can "display" data in different ways:</h4>
+        <p>1. Writing into an alert box, using window.alert(). <br>
+           2. Writing into the HTML output using document.write(). <br>
+           3. Writing into an HTML element, using innerHTML. <br>
+           4. Writing into the browser console, using console.log(). <br></p>
+    <br><br>
+
+    <h2>4. How to used JavaScript Events to do all examples?</h2>
+    <p>These are some javascript events: </p><br>
+    <h3>1. JavaScript onclick events: </h3>
+    <p>This is a mouse event and provokes any logic defined if the user clicks on the element it is bound to. </p><br>
+    <h3>Examples :</h3>
+    <p> In this example, we will display a message in the alert box when the button is clicked </p><br>
+    &lt;button type="button"
+            onclick="hiThere()"
+            style="width:150px; height:5vh;"&gt; <br>
+            Click me event
+        &lt;/button&gt; <br>
+        &lt;script&gt; <br>
+        alert('Hi there!'){ <br>
+        function hiThere(); <br>
+            } <br>
+        &lt;/script&gt; <br><br>
+        <button type="button"
+            onclick="hiThere()"
+            style="width:150px; height:5vh;">
+            Click me event
+        </button>
+        <script>
+            function hiThere() {
+                alert('Hi there!');
+            }
+        </script> <br><br>
+        <h3>2. JavaScript onkeyup event:</h3>
+        <p>This event is a keyboard event and executes instructions whenever a key is released after pressing. </p>
+        <h3>Examples :</h3>
+        <p>In this example, we will change the color by pressing UP arrow key </p><br>
+        &lt;h4&gt;The input box will change color when UP arrow key is pressed&lt;/h&gt;<br>
+    &lt;inut id="bg" onkeyup="changeBackground()" placeholder="write something" style="color:#fff"&gt; <br>
+    &lt;script&gt; <br>
+        var a=0; <br>
+        var b=0; <br>
+        var c=0; <br>
+        function changeBackground() { <br>
+            var x=document.getElementById('bg'); <br>
+            x.style.backgroundColor='rgb('+a+', '+b+', '+c+')'; <br>
+            a+=100; <br>
+            b+=a+50; <br>
+            c+=b+70; <br>
+            if(a>255) a=a-b; <br>
+            if(b>255) b=a; <br>
+            if(c>255) c=b; <br>
+        } <br>
+    &lt;/script&gt; <br><br>
+
+
+    <h4>The input box will change color when UP arrow key is pressed</h4>
+    <input id="bg" onkeyup="changeBackground()" placeholder="write something" style="color:#fff">
+
+    <script>
+        var a=0;
+        var b=0;
+        var c=0;
+        function changeBackground() {
+            var x=document.getElementById('bg');
+            x.style.backgroundColor='rgb('+a+', '+b+', '+c+')';
+            a+=100;
+            b+=a+50;
+            c+=b+70;
+            if(a>255) a=a-b;
+            if(b>255) b=a;
+            if(c>255) c=b;
+        }
+    </script> <br><br>
+
+    <h3>3. onmouseover event:</h3>
+    <p>This event corresponds to hovering the mouse pointer over the element and its children, to which it is bound to</p> <br>
+    <h3>Example :</h3>
+    <p> In this example, we will make the box vanish when the mouse will be hovered on it </p> <br>
+   &lt;div id="hover"
+         onmouseover="hov()"
+         style="background-color:green;
+                height:200px;
+                width:200px;"&gt;
+   &lt;/div&gt;
+   &lt;script&gt;
+        function hov() {
+            var e=document.getElementById('hover');
+            e.style.display='none';
+        }
+   &lt;/script&gt; <br><br>
+
+            <div id="hover"
+            onmouseover="hov()"
+            style="background-color:green;
+                height:100px;
+                width:100px;">
+            </div>
+            <script>
+            function hov() {
+            var e=document.getElementById('hover');
+            e.style.display='none';
+            }
+            </script><br><br>
+
+            <h3>4. JavaScript onchange event:</h3>
+            <p>This event detects the change in value of any element listing to this event. </p><br>
+            <h3>Example :</h3>
+            &lt;input onchange="alert(this.value)"
+            type="number"
+            style="height: 15px;width:50px;"&gt;<br><br>
+
+            <input onchange="alert(this.value)"
+            type="number"
+            style="height: 50px;width:150px;">
+            <br><br>
+
+            <h3>5. JavaScript onload event:</h3>
+            <p>When an element is loaded completely, this event is evoked. </p><br>
+            <h3>Example :</h3>
+            <p>When an element is loaded completely, this event is evoked. </p><br>
+            &lt;img width="500px" onload="alert('Image completely loaded')"
+            alt="Tops-Logo"
+            src="https://www.helpdial.in/wp-content/uploads/2022/11/TOPS_logo2F-2.png"&gt; <br>
+   
+
+            <img width="500px" onload="('Image completely loaded')"
+         alt="Tops-Logo"
+         src="https://www.helpdial.in/wp-content/uploads/2022/11/TOPS_logo2F-2.png">
+
+
+            <br><br>
+
+            <h3>6. JavaScript onfocus event: </h3>
+            <p>An element listing to this event executes instructions whenever it receives focus.</p><br>
+            <h3>Example :</h3>
+            <p>
+                Take the focus into the input box below:
+            </p><br>
+            &lt;input id="inp"
+                        onfocus="focused()""
+                        style=" margin-left: 45%;"&gt;<br>
+                    &lt;script&gt; 
+                        function focused() {
+                            var e=document.getElementById('inp');
+                            if(confirm('Got it?')) {
+                                e.blur();
+                            }
+                        }
+                    &lt;/script&gt;<br><br>
+
+
+                    <input id="inp"
+                        onfocus="focused()""
+                        style="width:150px;height: 50px;">
+                    <script>
+                        function focused() {
+                            var e=document.getElementById('inp');
+                            if(confirm('Got it?')) {
+                                e.blur();
+                            }
+                        }
+                    </script><br><br>
+
+                    <h3>7. JavaScript onblur event: </h3>
+                    <p> This event is evoked when an element loses focus. </p><br>
+                    <h3>Example :</h3>
+                   <p>Write something in the input box and then click elsewhere
+                        in the document body.</p>
+                    <input onblur="alert(this.value)"> <br><br>
+</body>
+</html>
