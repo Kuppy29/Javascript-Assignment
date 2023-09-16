@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click The Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        div{
+        font-size: 25px;
+        margin: 10px;
+        }
+        button{
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>● Create a program that will select all the classes and loop over and whenever i click the
+        button the alert should show</h2><br><br>
+        <button id="alertButton">Click Me</button>
+        <div class="myClass">Class 1</div>
+        <div class="myClass">Class 2</div>
+        <div class="myClass">Class 3</div>
+        <div class="myClass">Class 4</div>
+
+        <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                // Get all elements with the class "myClass"
+                const elements = document.querySelectorAll(".myClass");
+
+                // Function to show an alert when the button is clicked
+                function showAlert() {
+                    alert("Button clicked!");
+                }
+
+                // Add a click event listener to the button
+                const button = document.getElementById("alertButton");
+                button.addEventListener("click", showAlert);
+
+                // Loop over all elements with the class "myClass" and add a click event listener
+                elements.forEach(function (element) {
+                    element.addEventListener("click", showAlert);
+                });
+            });
+        </script>
+
+</body>
+</html>
