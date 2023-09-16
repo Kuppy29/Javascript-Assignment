@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            margin: 15px;
+        }
+       ul{
+        width: 80%;
+        margin: 0 auto;
+        background-color: #333;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+       }
+       li{
+          width: 10%;
+          margin: 40px;
+       }
+       a{
+        color: aliceblue;
+        font-size: 25px;
+       }
+       button{
+        font-size: 25px;
+       }
+
+    </style>
+</head>
+<body>
+    <h2>● Create a responsive header using proper JavaScript</h2><br>
+    <nav>
+        <h1>My Header</h1>
+        <ul id="nav-links">
+            <li><button id="toggle-menu">&#9776; Menu</button></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Search</a></li>
+        </ul>
+    </nav>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.getElementById("nav-links");
+            const toggleMenuButton = document.getElementById("toggle-menu");
+            
+            // Function to toggle the mobile menu
+            function toggleMobileMenu() {
+                navLinks.classList.toggle("show");
+            }
+
+            // Add a click event listener to the mobile menu button
+            toggleMenuButton.addEventListener("click", toggleMobileMenu);
+            
+            // Function to check the screen size and show/hide the mobile menu as needed
+            function checkScreenSize() {
+                if (window.innerWidth < 768) { // Adjust this breakpoint as needed
+                    navLinks.classList.add("mobile");
+                    navLinks.classList.remove("show");
+                } else {
+                    navLinks.classList.remove("mobile");
+                    navLinks.classList.remove("show");
+                }
+            }
+
+            // Call the checkScreenSize function initially and whenever the window is resized
+            checkScreenSize();
+            window.addEventListener("resize", checkScreenSize);
+        });
+
+    </script>
+</body>
+</html>
