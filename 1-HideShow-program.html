@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide/Show Program | Javascript-Assignment</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 80%;
+            margin: 2% auto;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2> ● Create a program to hide/show the password</h2><br><br>
+    <!-- <strong>
+        <p>Click on the checkbox to show
+            or hide password:
+        </p>
+    </strong> -->
+ 
+    <strong>Password</strong>: 
+    <input type="password" value="TopsTechnology"
+              id="typepass"> <br><br>
+ 
+    <input type="checkbox" onclick="Toggle()" class="input">
+    <strong>Show Password</strong>
+ 
+    <script>
+        // Change the type of input to password or text
+        function Toggle() {
+            let temp = document.getElementById("typepass");
+             
+            if (temp.type === "password") {
+                temp.type = "text";
+            }
+            else {
+                temp.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
