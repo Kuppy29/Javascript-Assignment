@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+         text-align: center;
+         margin: 20px;
+         text-decoration: underline;
+        }
+        #myForm{
+            width: 40%;
+            height: 40vh;
+            margin: 0 auto;
+            border: 2px solid black;
+            font-size: 25px;
+        }
+        label{
+            margin: 20px;
+        }
+        input{
+            margin: 20px;
+            padding: 5px;
+        }
+        button{
+            margin: 20px;
+            font-size: 25px;
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>● Prevent the browser when i click the form submit button</h2><br>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+    <div id="error-message"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+    const errorMessage = document.getElementById("error-message");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        
+        // Get form input values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        
+        // Validate the inputs
+        if (name === "" || email === "" || password === "") {
+            errorMessage.textContent = "All fields are required.";
+        } else if (!isValidEmail(email)) {
+            errorMessage.textContent = "Please enter a valid email address.";
+        } else if (password.length < 6) {
+            errorMessage.textContent = "Password must be at least 6 characters long.";
+        } else {
+            // If all validations pass, you can submit the form or perform other actions here
+            errorMessage.textContent = ""; // Clear any previous error messages
+            alert("Form submitted successfully!"); // Replace this with your form submission logic
+            form.reset(); // Reset the form
+        }
+    });
+
+    // Function to validate email format
+    function isValidEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailRegex.test(email);
+    }
+});
+
+    </script>
+</body>
+</html>
